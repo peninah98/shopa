@@ -5,13 +5,12 @@ import { useNavigation } from "@react-navigation/native"
 import {
   View,
   Text,
-  ImageBackground,
   StyleSheet,
   Image,
   TextInput,
   TouchableOpacity,
 } from "react-native"
-import Animated, { FadeIn, FadeInDown, FadeInUp } from "react-native-reanimated"
+import Animated, { FadeInDown, FadeInUp } from "react-native-reanimated"
 
 function SignUp() {
   const navigation = useNavigation()
@@ -34,16 +33,12 @@ function SignUp() {
           className="h-[160] w-[65]"
         />
       </View>
-      <View className="h-ull w-full flex justify-around pt-24 pb-10">
-        <Animated.View
-          entering={FadeInDown.duration(1000).springify()}
-          className="flex items-center">
-          <Animated.Text
-            entering={FadeInUp.delay(400).duration(1000).springify()}
-            className="text-white font-bold tracking-wider text-5xl -top-20">
-            SignUp
-          </Animated.Text>
-        </Animated.View>
+      <Animated.Text
+        entering={FadeInUp.delay(400).duration(1000).springify()}
+        className="text-white font-bold tracking-wider text-4xl items-center text-center -top-20">
+        Sign Up
+      </Animated.Text>
+      <View className="h-ull w-full flex justify-around">
         <View className="flex items-center mx-4 space-y-4">
           <Animated.View
             entering={FadeInDown.duration(1000).springify()}
@@ -55,7 +50,7 @@ function SignUp() {
           </Animated.View>
           <Animated.View
             entering={FadeInDown.duration(1000).springify()}
-            className="bg-black/5 p-3 rounded-2xl w-full">
+            className="bg-black/5 p-3 rounded-2xl w-full mt-10">
             <TextInput
               placeholder="Email"
               placeholderTextColor={"black"}
@@ -63,15 +58,15 @@ function SignUp() {
           </Animated.View>
           <View className="bg-black/5 p-3 rounded-2xl w-full">
             <TextInput
-              placeholder="Email"
+              placeholder="Password"
               placeholderTextColor={"black"}
               secureTextEntry
             />
           </View>
           <View className="w-full">
-            <TouchableOpacity className="w-full bg-sky-400 mb-3 p-3 rounded-2xl">
+            <TouchableOpacity className="w-full bg-sky-400 mb-1 p-3 rounded-2xl">
               <Text className="text-xl font-bold text-white text-center">
-                Sign UP
+                Sign Up
               </Text>
             </TouchableOpacity>
           </View>
@@ -90,5 +85,5 @@ function SignUp() {
 export default SignUp
 
 const styles = StyleSheet.create({
-  container: { backgroundColor: "white", flex: 1 },
+  container: { backgroundColor: "white", flex: 1, gap: 8 },
 })
