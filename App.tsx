@@ -1,10 +1,29 @@
-import Animated from "react-native-reanimated"
-import { Text, View } from "react-native"
+// In App.js in a new project
 
-export default function App() {
+import * as React from "react"
+import { View, Text } from "react-native"
+import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import Login from "./screens/Login"
+import SignUp from "./screens/SignUp"
+
+const Stack = createNativeStackNavigator()
+
+function App() {
   return (
-    <View className="bg-yellow-700">
-      <Text classNane="text-red-400"> Hello word</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUp}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
+
+export default App
