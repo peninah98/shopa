@@ -40,7 +40,7 @@ function Login() {
           <Animated.Text
             entering={FadeInUp.delay(400).duration(1000).springify()}
             className="text-white font-bold tracking-wider text-5xl -top-40">
-            Login
+            Logino
           </Animated.Text>
         </Animated.View>
         <View className="flex items-center mx-4 space-y-4">
